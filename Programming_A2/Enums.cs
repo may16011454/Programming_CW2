@@ -24,5 +24,12 @@ namespace Programming_A2
             TEAM_MEMBER
         }
 
+        public enum IssueSeverity
+        {
+            BAD,
+            URGENT,
+            NOT_MUCH_OF_AN_ISSUE 
+        }
+
     }
 }
