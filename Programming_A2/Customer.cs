@@ -15,6 +15,7 @@ namespace Programming_A2
         public string? Sname { get; set; }
 
         public string? Contact { get; set; }
+       
         public Customer(string fname, string sname, string contact)
         {
             Id = Guid.NewGuid();

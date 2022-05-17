@@ -14,6 +14,8 @@ namespace Programming_A2
 
         public DateTime Timestamp { get; set; }
 
+        public List<Purchases> Purchases { get; set; } 
+
     }
 
 }

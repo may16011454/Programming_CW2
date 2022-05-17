@@ -22,13 +22,6 @@ namespace Programming_A2
 
         public string Contact { get; set; }
 
-        public List<Bookings> Booking { get; set; }
-
-        public List<Purchases> Purchase { get; set; }
-
-        public List<Services> Service { get; set; }
-
-
         public StaffType Type { get; set; }
 
         public StaffMember(string fname, string sname, string username, string password)
