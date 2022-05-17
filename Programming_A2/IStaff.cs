@@ -15,7 +15,7 @@ namespace Programming_A2
 
         public StaffType Type { get; set; }
 
-        public List<Bookings> Booking { get; set; }
+        public List<Booking> Booking { get; set; }
 
         public List<Purchases> Purchase { get; set; }
          

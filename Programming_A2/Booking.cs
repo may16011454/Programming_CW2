@@ -6,7 +6,14 @@ using System.Threading.Tasks;
 
 namespace Programming_A2
 {
-    internal class Booking
+    public class Booking
     {
+        public string Details { get; set; }
+
+        public DateTime BookingTime { get; set; }
+
+        public Customer Customer { get; set; }
+
+        
     }
 }
