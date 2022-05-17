@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Programming_A2
 {
-    internal class Commercial : IProperties
+    public class Commercial : IProperties
     {
         public Guid Id { get; set; }
         public string? Address { get; set; }
@@ -27,7 +27,7 @@ namespace Programming_A2
 
         public override string? ToString()
         {
-            return $"Address: {Address} Customer: {CurrentCustomer} Size: {Size}";
+            return $"Address: {Address} Size: {Size}";
         }
     }
 }

@@ -45,14 +45,46 @@ namespace UnitTests
             Booking bookings;
 
             //Act
-            bookings = new Booking("Booked In", DateTime.Now, null );
+            bookings = new Booking("Booked In", null);
             string? bookingsString = bookings.ToString();
 
             //Assert
-            Assert.IsType<Cosmetic>(bookings);
+            Assert.IsType<Booking>(bookings);
             Assert.Equal(bookingsString, $"Details: Booked In Booking Time: {DateTime.Now}");
 
         }
+        [Fact]
+        public void CommercialToStringTest()
+        {
+            //Arrange
+            Commercial com;
+
+            //Act
+            com = new Commercial("123", 12);
+            string? comString = com.ToString();
+
+            //Assert
+            Assert.IsType<Commercial>(com);
+            Assert.Equal(comString, $"Address: 123 Size: 12");
+
+        }       
+        
+        [Fact]
+        public void CustomerToStringTest()
+        {
+            //Arrange
+            Customer com;
+
+            //Act
+            com = new Customer("Barold", "Barryson", "7");
+            string? comString = com.ToString();
+
+            //Assert
+            Assert.IsType<Customer>(com);
+            Assert.Equal(comString, $"First Name: Barold Last Name: Barryson Contact: 7");
+
+        }
+
 
 
     }

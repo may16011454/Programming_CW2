@@ -16,7 +16,7 @@ namespace Programming_A2
 
         public Customer Customer { get; set; }
 
-        public Booking(string details, string bookingtime, Customer customer)
+        public Booking(string details, Customer customer)
         {
             Id = Guid.NewGuid(); 
             Details = details;
