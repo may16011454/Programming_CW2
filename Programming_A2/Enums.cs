@@ -17,6 +17,13 @@ namespace Programming_A2
             RETAIL
         }
 
+        public enum DomesticType
+        {
+            HOUSE,
+            FLAT,
+            BUNGALOW
+        }
+
         public enum StaffType
         {
             ADMIN,

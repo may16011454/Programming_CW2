@@ -25,5 +25,10 @@ namespace Programming_A2
             Timestamp = timestamp;
             Purchases = new List<Purchases>();
         }
+
+        public override string? ToString()
+        {
+            return $"Description: {Description} Date: {Timestamp} Severity of Issue: {Severity}";
+        }
     }
 }

@@ -36,7 +36,7 @@ namespace Programming_A2
 
         public override string? ToString()
         {
-            return $"First Name: {Fname} Last Name: {Sname} Username: {Username} Password: ************ Type: {Type}";
+            return $"First Name: {Fname} Last Name: {Sname} Username: {Username} Type: {Type}";
         }
     }
 }

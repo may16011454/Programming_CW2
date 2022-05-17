@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static Programming_A2.Enums;
 
 namespace Programming_A2
 {
@@ -15,6 +16,14 @@ namespace Programming_A2
         public List<IIssue>? Issues { get; set; }
 
         public DomesticType Type { get; set; }
-        public int NumberOfRooms { get; set; } 
+        public int NumberOfRooms { get; set; }
+
+        public Domestic(string? address, Customer? currentCustomer, DomesticType type, int numberOfRooms)
+        {
+            Address = address;
+            CurrentCustomer = currentCustomer;
+            Type = type;
+            NumberOfRooms = numberOfRooms;
+        }
     }
 }

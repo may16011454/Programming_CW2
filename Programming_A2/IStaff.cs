@@ -14,11 +14,5 @@ namespace Programming_A2
         public string Password { get; set; }
 
         public StaffType Type { get; set; }
-
-        public List<Booking> Booking { get; set; }
-
-        public List<Purchases> Purchase { get; set; }
-         
-        public List<Services> Service { get; set; }
     }
 }

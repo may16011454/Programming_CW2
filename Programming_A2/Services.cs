@@ -19,14 +19,17 @@ namespace Programming_A2
         public DateTime TimeFinished { get; set; }
 
 
-        public Services(string details, bool isopen,)
+        public Services(string details, bool isopen)
         {
             Id = Guid.NewGuid();
             Details = details;
             isOpen = false;
-            TimeStarted = DateTime;
-            TimeFinished = DateTime;
+            TimeStarted = DateTime.Now;
+            TimeFinished = DateTime.Now;
         }
-
+        public override string? ToString()
+        {
+            return $"Details: {Details} Is Service Open: {isOpen} Time Started: {TimeStarted} Time Finished: {TimeFinished} ";
+        }
     }
 }

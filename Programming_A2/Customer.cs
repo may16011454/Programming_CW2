@@ -23,5 +23,9 @@ namespace Programming_A2
             Sname = sname;
             Contact = contact;
         }
+        public override string? ToString()
+        {
+            return $"First Name: {Fname} Last Name: {Sname} Contact: {Contact}";
+        }
     }
 }

@@ -23,5 +23,10 @@ namespace Programming_A2
             BookingTime = DateTime.Now;
             Customer = customer;
         }
+
+        public override string? ToString()
+        {
+            return $"Details: {Details} Booking Time: {BookingTime} Customer: {Customer}";
+        }
     }
 }

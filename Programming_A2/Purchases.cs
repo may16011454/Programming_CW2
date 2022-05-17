@@ -26,5 +26,9 @@ namespace Programming_A2
             CreatedOn = DateTime.Now;
             CreatedBy = createdBy;
         }
+        public override string? ToString()
+        {
+            return $"Description: {Description} Cost: £{Cost} Date Purchased: {CreatedOn} Created By: {CreatedBy}";
+        }
     }
 }
