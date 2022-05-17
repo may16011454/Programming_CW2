@@ -26,7 +26,7 @@ namespace Programming_A2
 
         public override string? ToString()
         {
-            return $"Details: {Details} Booking Time: {BookingTime} Customer: {Customer}";
+            return $"Details: {Details} Booking Time: {BookingTime}";
         }
     }
 }
