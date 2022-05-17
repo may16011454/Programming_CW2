@@ -73,19 +73,77 @@ namespace UnitTests
         public void CustomerToStringTest()
         {
             //Arrange
-            Customer com;
+            Customer cus;
 
             //Act
-            com = new Customer("Barold", "Barryson", "7");
-            string? comString = com.ToString();
+            cus = new Customer("Barold", "Barryson", "7");
+            string? cusString = cus.ToString();
 
             //Assert
-            Assert.IsType<Customer>(com);
-            Assert.Equal(comString, $"First Name: Barold Last Name: Barryson Contact: 7");
+            Assert.IsType<Customer>(cus);
+            Assert.Equal(cusString, $"First Name: Barold Last Name: Barryson Contact: 7");
 
         }
 
+        [Fact]
+        public void DomesticToStringTest()
+        {
+            //Arrange
+            Domestic dom;
 
+            //Act
+            dom = new Domestic("1234",null, Enums.DomesticType.HOUSE, 8);
+            string? domString = dom.ToString();
 
+            //Assert
+            Assert.IsType<Domestic>(dom);
+            Assert.Equal(domString, $"Address: 1234 Number of Rooms: 8 Type: HOUSE");
+
+        }
+        [Fact]
+        public void PurchaseToStringTest()
+        {
+            //Arrange
+            Purchases dom;
+
+            //Act
+            dom = new Purchases("Mop", 9.99, null);
+            string? domString = dom.ToString();
+
+            //Assert
+            Assert.IsType<Purchases>(dom);
+            Assert.Equal(domString, $"Description: Mop Cost: £9.99 Date Purchased: {DateTime.Now}");
+
+        }
+        [Fact]
+        public void SerivicesToStringTest()
+        {
+            //Arrange
+            Services dom;
+
+            //Act
+            dom = new Services("Clean", true);
+            string? domString = dom.ToString();
+
+            //Assert
+            Assert.IsType<Services>(dom);
+            Assert.Equal(domString, $"Details: Clean Is Service Open: False Time Started: {DateTime.Now} Time Finished: {DateTime.Now}");
+
+        }
+        [Fact]
+        public void StaffMemberToStringTest()
+        {
+            //Arrange
+            StaffMember dom;
+
+            //Act
+            dom = new StaffMember("Barold II", "Barryson","BaroldB",null, Enums.StaffType.CLEANER);
+            string? domString = dom.ToString();
+
+            //Assert
+            Assert.IsType<StaffMember>(dom);
+            Assert.Equal(domString, $"First Name: Barold II Last Name: Barryson Username: BaroldB Type: CLEANER");
+
+        }
     }
     }

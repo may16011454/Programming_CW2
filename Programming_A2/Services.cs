@@ -29,7 +29,7 @@ namespace Programming_A2
         }
         public override string? ToString()
         {
-            return $"Details: {Details} Is Service Open: {isOpen} Time Started: {TimeStarted} Time Finished: {TimeFinished} ";
+            return $"Details: {Details} Is Service Open: {isOpen} Time Started: {TimeStarted} Time Finished: {TimeFinished}";
         }
     }
 }

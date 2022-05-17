@@ -7,7 +7,7 @@ using static Programming_A2.Enums;
 
 namespace Programming_A2
 {
-    internal class Domestic : IProperties
+    public class Domestic : IProperties
     {
         public Guid Id { get; set; }
         public string? Address { get; set; }
@@ -24,6 +24,11 @@ namespace Programming_A2
             CurrentCustomer = currentCustomer;
             Type = type;
             NumberOfRooms = numberOfRooms;
+        }
+
+        public override string? ToString()
+        {
+            return $"Address: {Address} Number of Rooms: {NumberOfRooms} Type: {Type}";
         }
     }
 }

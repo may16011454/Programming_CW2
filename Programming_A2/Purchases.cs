@@ -28,7 +28,7 @@ namespace Programming_A2
         }
         public override string? ToString()
         {
-            return $"Description: {Description} Cost: £{Cost} Date Purchased: {CreatedOn} Created By: {CreatedBy}";
+            return $"Description: {Description} Cost: £{Cost} Date Purchased: {CreatedOn}";
         }
     }
 }
