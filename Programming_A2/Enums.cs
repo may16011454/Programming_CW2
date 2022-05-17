@@ -21,7 +21,8 @@ namespace Programming_A2
         {
             ADMIN,
             MANAGER,
-            TEAM_MEMBER
+            TEAM_MEMBER,
+            CLEANER
         }
 
         public enum IssueSeverity

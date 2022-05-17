@@ -16,7 +16,7 @@ namespace Programming_A2
 
         public List<Purchases>? Purchases { get; set; }
 
-        public Cosmetic(Guid id, string? description, DateTime timestamp)
+        public Cosmetic(string? description, DateTime timestamp)
         {
             Id = Guid.NewGuid();
             Description = description;

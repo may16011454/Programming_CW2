@@ -24,19 +24,19 @@ namespace Programming_A2
 
         public StaffType Type { get; set; }
 
-        public StaffMember(string fname, string sname, string username, string password)
+        public StaffMember(string fname, string sname, string username, string password, StaffType type)
         {
             Id = Guid.NewGuid();
             Fname = fname;
             Sname = sname;
             Username = username;
             Password = password;
-            Type = StaffType.TEAM_MEMBER;
+            Type = type;
         }
 
         public override string? ToString()
         {
-            return $"Name: {Fname} {Sname} Type: {Type}";
+            return $"First Name: {Fname} Last Name: {Sname} Username: {Username} Password: ************ Type: {Type}";
         }
     }
 }

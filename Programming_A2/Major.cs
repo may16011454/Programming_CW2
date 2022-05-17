@@ -18,7 +18,7 @@ namespace Programming_A2
         public IssueSeverity Severity { get; set; }
         public List<Purchases>? Purchases { get; set; }
 
-        public Major(Guid id, string? description, DateTime timestamp, IssueSeverity severity)
+        public Major(string? description, DateTime timestamp, IssueSeverity severity)
         {
             Id = Guid.NewGuid();
             Description = description;
