@@ -10,12 +10,12 @@ namespace Programming_A2
     {
         public string Name { get; set; }
 
-        public List<IProperties>? Properties { get; set; }
-        public List<IPerson>? People { get; set; }
-        public List<Booking>? BookingInfo { get; set; }
-        public List<Customer>? CustomerInfo { get; set; }
-        public List<Domestic>? DomesticInfo { get; set; }
-        public List<Commercial>? CommercialInfo { get; set; }
+        public List<IProperties> Properties { get; set; }
+        public List<IPerson> People { get; set; }
+        public List<Booking> BookingInfo { get; set; }
+        public List<Customer> CustomerInfo { get; set; }
+        public List<Domestic> DomesticInfo { get; set; }
+        public List<Commercial> CommercialInfo { get; set; }
 
         public CleaningSystem(string name)
         {

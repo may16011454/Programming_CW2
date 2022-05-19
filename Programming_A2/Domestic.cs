@@ -10,10 +10,10 @@ namespace Programming_A2
     public class Domestic : IProperties
     {
         public Guid Id { get; set; }
-        public string? Address { get; set; }
+        public string Address { get; set; }
 
-         public Customer? CurrentCustomer { get; set; }
-        public List<IIssue>? Issues { get; set; }
+         public Customer CurrentCustomer { get; set; }
+        public List<IIssue> Issues { get; set; }
 
         public DomesticType Type { get; set; }
         public int NumberOfRooms { get; set; }
