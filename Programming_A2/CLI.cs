@@ -37,6 +37,18 @@ namespace Programming_A2
             {
                 SelectPeople();
             }
+            else if (menuChoice == "Purchases")
+            {
+                SelectPurchase();
+            }
+            else if (menuChoice == "Issues")
+            {
+                SelectIssues();
+            }
+            else
+            {
+                Console.WriteLine("okay...");
+            }
 
         }
 
@@ -133,7 +145,124 @@ namespace Programming_A2
 
         static void SelectPeople()
         {
-            var people = Prompt.Select("Choose one of the option below: ", new[] { "Staff", "Customer"});
+            var people = Prompt.Select("Choose one of the option below: ", new[] { "Create Staff","View Staff", "Create Customer", "View Customer", "Menu"});
+
+            if (people == "Create Staff")
+            {
+                es.StaffInfo.Add(CreateStaff());
+                Console.Clear();
+                SelectPeople();
+            }
+            else if (people == "View Staff")
+            {
+                foreach (var staff in es.StaffInfo)
+                {
+                    Console.WriteLine(staff);
+                }
+                SelectPeople(); 
+            }
+            else if (people == "Create Customer")
+            {
+                es.CustomerInfo.Add(CreateCustomer());
+                Console.Clear();
+                SelectPeople();
+            }
+            else if (people == "View Customer")
+            {
+                foreach (var cus in es.CustomerInfo)
+                {
+                    Console.WriteLine(cus);
+                }
+                SelectPeople();
+            }
+            else
+            {
+                MainMenu();
+            }
+        }
+
+        //create staff
+        static StaffMember CreateStaff()
+        {
+            var fname = Prompt.Input<string>("Enter first name: ");
+            var sname = Prompt.Input<string>("Enter last name: ");
+            var uname = Prompt.Input<string>("Enter username: ");
+            var password = Prompt.Input<string>("Enter password: ");
+            var contact = Prompt.Input<string>("Enter contact: ");
+            var type = Prompt.Select<StaffType>("Type of Staff: ");
+            return new StaffMember(fname, sname, uname, password, type);
+
+        }
+
+        //Purchases
+
+        static void SelectPurchase()
+        {
+            var pur = Prompt.Select("Choose: ", new[] { "Add new purchase", "view purchases", "Menu" });
+
+            if (pur == "Add new purchase")
+            {
+                es.PurchaseInfo.Add(CreatePurchase());
+                Console.Clear();
+                SelectPurchase();
+            }
+            else if (pur == "view purchases")
+            {
+                foreach (var purchase in es.PurchaseInfo)
+                {
+                    Console.WriteLine(purchase); 
+                }
+                SelectPurchase();
+            }
+            else
+            {
+                MainMenu();
+            }
+        }
+
+        static Purchases CreatePurchase()
+        {
+            var desc = Prompt.Input<string>("Enter product description: ");
+            var cost = Prompt.Input<double>("Enter product cost: ");
+            var staff = CreateStaff();
+            return new Purchases(desc, cost,staff);
+        }
+
+        //Issues
+
+        static void SelectIssues()
+        {
+            var iss = Prompt.Select("Choose: ", new[] { "Add Issue", "View Issues", "Menu" });
+
+            if (iss == "Add Issue")
+            {
+                es.IssueInfo.Add(CreateIssue());
+                Console.Clear();
+                SelectIssues();
+            }
+            else if (iss == "View Issues")
+            {
+                foreach (var issue in es.IssueInfo)
+                {
+                    Console.WriteLine(issue);
+                }
+                SelectIssues();
+            }
+            else
+            {
+                MainMenu();
+            }
+
+        }
+
+        //create Major Issue
+
+        static Major CreateIssue()
+        {
+            var desc = Prompt.Input<string>("Enter Issue description: ");
+            var type = Prompt.Select<IssueSeverity>("Severity: ");
+            return new Major(desc,type);
+
         }
     }
 }

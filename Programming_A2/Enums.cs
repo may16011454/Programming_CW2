@@ -33,10 +33,12 @@ namespace Programming_A2
         }
 
         public enum IssueSeverity
-        {
+        { 
+            NOT_MUCH_OF_AN_ISSUE ,
             BAD,
             URGENT,
-            NOT_MUCH_OF_AN_ISSUE 
+            MINOR,
+            MAJOR
         }
 
     }
