@@ -12,7 +12,7 @@ namespace Programming_A2
     {
         static CleaningSystem es = new CleaningSystem("SCS");
 
-        static void Main(String[]args)
+        static void Main(string[]args)
         {
             Console.Clear();
 
@@ -23,15 +23,19 @@ namespace Programming_A2
         static void MainMenu()
         {
             Console.Clear();
-            var menuChoice = Prompt.Select("Choose one of the option below: ", new[] { " Properties", "Cstomers", "Booking", "Purchases", "Issues" });
+            var menuChoice = Prompt.Select("Choose one of the option below: ", new[] { "Properties", "People", "Booking", "Purchases", "Issues" });
 
-            if (menuChoice == "Propeties")
+            if (menuChoice == "Properties")
             {
                 SelectProperty();
             }
             else if (menuChoice == "Booking")
             {
-
+                SelectBooking();
+            }
+            else if (menuChoice == "People")
+            {
+                SelectPeople();
             }
 
         }
@@ -40,7 +44,7 @@ namespace Programming_A2
 
         static void SelectProperty()
         {
-            var property = Prompt.Select("What is the kind of property do you want to manage", new[] {"Domestic", "Commercial"});
+            var property = Prompt.Select("What is the kind of property do you want to manage", new[] {"Domestic", "Commercial", "Menu"});
 
             if(property ==  "Domestic")
             {
@@ -48,9 +52,15 @@ namespace Programming_A2
                 Console.Clear();
                 SelectProperty();
             }
-            else
+            else if (property == "Commercial")
             {
                 CreatedCommercial();
+                Console.Clear();
+                SelectProperty();
+            }
+            else
+            {
+                MainMenu();
             }
         }
         //method called to create a domestic property
@@ -81,6 +91,49 @@ namespace Programming_A2
             var sname = Prompt.Input<string>("Enter last name: ");
             var contact = Prompt.Input<string>("Enter Contact: ");
             return new Customer(fname, sname, contact);
+        }
+
+
+
+        //Booking
+
+        static void SelectBooking()
+        {
+            var book = Prompt.Select("Choose: ", new[] { "Make new booking", "view bookings", "Menu" });
+
+            if (book == "Make new booking")
+            {
+                es.BookingInfo.Add(CreateBookings());
+                Console.Clear();
+                SelectBooking();
+            }
+            else if (book == "view bookings")
+            {
+                foreach (var booking in es.BookingInfo)
+                {
+                    Console.WriteLine(booking);
+                }
+                SelectBooking();
+            }
+            else
+            {
+                MainMenu();
+            }
+        }
+
+        static Booking CreateBookings()
+        {
+            var details = Prompt.Input<string>("Enter the details of booking: ");
+            var customer = CreateCustomer();
+            es.CustomerInfo.Add(customer);
+            return new Booking(details, customer);
+        }
+
+        //People
+
+        static void SelectPeople()
+        {
+            var people = Prompt.Select("Choose one of the option below: ", new[] { "Staff", "Customer"});
         }
     }
 }
